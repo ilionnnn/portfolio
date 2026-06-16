@@ -1,0 +1,146 @@
+.page {
+  min-height: calc(100vh - 64px);
+  padding: 80px 0 100px;
+}
+
+.page-header {
+  margin-bottom: 56px;
+}
+
+.page-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.travels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.travel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--border);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.3);
+
+    .image-placeholder {
+      transform: scale(1.04);
+    }
+
+    .travel-flag {
+      transform: scale(1.18) translateY(-4px);
+    }
+  }
+}
+
+.travel-image {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(214, 245, 39, 0.06) 0%, transparent 60%),
+    linear-gradient(150deg, #1e1e28 0%, #1a1a24 60%, #22222e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.4s ease;
+}
+
+.travel-flag {
+  font-size: 4.5rem;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
+  transition: transform 0.35s ease;
+}
+
+.placeholder-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.travel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 22px 18px;
+  background: linear-gradient(to top, rgba(10, 10, 16, 0.92) 0%, transparent 100%);
+}
+
+.travel-name {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.travel-country {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.travel-city {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.travel-body {
+  padding: 22px 24px 26px;
+}
+
+.travel-desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.travel-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.highlight {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--accent);
+    border-color: var(--border);
+    background: var(--accent-subtle);
+  }
+}

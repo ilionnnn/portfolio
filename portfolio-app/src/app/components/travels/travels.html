@@ -1,0 +1,36 @@
+<div class="page">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-eyebrow">✦ Aventures</div>
+      <h2 class="section-title">Mes <span>Voyages</span></h2>
+      <p class="section-subtitle">Les destinations qui m'ont marqué</p>
+    </div>
+
+    <div class="travels-grid">
+      @for (travel of travels; track travel.country) {
+        <div class="travel-card">
+          <div class="travel-image">
+            <div class="image-placeholder">
+              <span class="travel-flag">{{ travel.flag }}</span>
+              <span class="placeholder-label">Photo à venir</span>
+            </div>
+            <div class="travel-overlay">
+              <div class="travel-name">
+                <h3 class="travel-country">{{ travel.country }}</h3>
+                <span class="travel-city">{{ travel.city }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="travel-body">
+            <p class="travel-desc">{{ travel.description }}</p>
+            <div class="travel-highlights">
+              @for (h of travel.highlights; track h) {
+                <span class="highlight">{{ h }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

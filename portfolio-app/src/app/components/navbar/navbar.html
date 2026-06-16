@@ -1,0 +1,20 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <a class="nav-logo" routerLink="/">IL</a>
+
+    <div class="nav-tabs">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="tab">
+        <span class="tab-icon">⌂</span> Accueil
+      </a>
+      <a routerLink="/experience" routerLinkActive="active" class="tab">
+        <span class="tab-icon">◈</span> Expérience
+      </a>
+      <a routerLink="/projects" routerLinkActive="active" class="tab">
+        <span class="tab-icon">◉</span> Projets
+      </a>
+      <a routerLink="/travels" routerLinkActive="active" class="tab">
+        <span class="tab-icon">✦</span> Voyages
+      </a>
+    </div>
+  </div>
+</nav>

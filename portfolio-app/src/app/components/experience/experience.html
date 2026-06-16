@@ -1,0 +1,37 @@
+<div class="page">
+  <div class="container">
+    <div class="page-header">
+      <div class="page-eyebrow">◈ Parcours</div>
+      <h2 class="section-title">Expérience <span>Professionnelle</span></h2>
+      <p class="section-subtitle">Mon parcours en entreprise, de la conception au déploiement</p>
+    </div>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.company) {
+        <div class="timeline-item">
+          <div class="timeline-line"></div>
+          <div class="timeline-dot">
+            <div class="dot-ring"></div>
+            <div class="dot-core"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="card-meta">
+                <span class="company-badge">{{ exp.company }}</span>
+                <span class="company-location">📍 {{ exp.location }}</span>
+              </div>
+              <span class="card-period">{{ exp.period }}</span>
+            </div>
+            <h3 class="card-title">{{ exp.title }}</h3>
+            <p class="card-desc">{{ exp.description }}</p>
+            <div class="card-tags">
+              @for (tech of exp.technologies; track tech) {
+                <span class="tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
